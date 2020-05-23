@@ -8,8 +8,7 @@ package imei
 
 import (
 	"errors"
-
-	"github.com/spin-org/thermomatic/internal/common"
+	"internal/common"
 )
 
 var (
