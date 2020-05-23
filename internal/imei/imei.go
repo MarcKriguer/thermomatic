@@ -8,7 +8,7 @@ package imei
 
 import (
 	"errors"
-	"internal/common"
+	"thermomatic/internal/common"
 )
 
 var (

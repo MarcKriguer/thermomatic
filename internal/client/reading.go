@@ -1,6 +1,6 @@
 package client
 
-import "internal/common"
+import "thermomatic/internal/common"
 
 // Reading is the set of device readings.
 type Reading struct {

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"internal/common"
+	"thermomatic/internal/common"
 )
 
 func main() {

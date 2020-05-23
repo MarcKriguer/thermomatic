@@ -1,7 +1,7 @@
 package imei
 
 import (
-	"internal/common"
+	"thermomatic/internal/common"
 	"testing"
 )
 
