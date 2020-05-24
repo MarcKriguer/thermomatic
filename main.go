@@ -1,9 +1,13 @@
 package main
 
 import (
-	"thermomatic/internal/common"
+  "github.com/MarcKriguer/thermomatic/internal/common"
+  "github.com/MarcKriguer/thermomatic/internal/server"
 )
 
+const PORT = 1337
+
 func main() {
-	panic(common.ErrNotImplemented)
+  common.LogOutput("Starting thermomatic service.")
+  server.StartServer(PORT)
 }

@@ -1,7 +1,7 @@
 package imei
 
 import (
-	"thermomatic/internal/common"
+	"github.com/MarcKriguer/thermomatic/internal/common"
 	"testing"
 )
 

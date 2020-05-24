@@ -1,6 +1,6 @@
 package client
 
-import "thermomatic/internal/common"
+import "github.com/MarcKriguer/thermomatic/internal/common"
 
 // Reading is the set of device readings.
 type Reading struct {
