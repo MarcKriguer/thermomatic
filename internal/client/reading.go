@@ -7,6 +7,7 @@ import (
   "fmt"
   "github.com/MarcKriguer/thermomatic/internal/common"
   "math"
+  "math/rand"
 )
 
 var (
@@ -33,7 +34,7 @@ type Reading struct {
 	BatteryLevel float64
 }
 
-// Decode decodes the reading message payload in the given b into r.
+// Decode the reading message payload in the given byte array into a Reading.
 //
 // Returns true if all fields are within min/max ranges, false if any are outside their range.
 //
@@ -97,4 +98,21 @@ func Float64ToByteArray(field float64) (buf []byte) {
     common.LogError(err)
   }
   return buffer.Bytes()
+}
+
+// Generate a byte array of a valid Reading [this method only used by test methods]
+func (r *Reading) GenerateRandomReading() (b []byte) {
+  // Generate a Reading and populate with random data
+  var reading Reading
+  reading.Temperature = (rand.Float64() * 600) - 300
+  reading.Altitude = (rand.Float64() * 40000) - 20000
+  reading.Latitude = (rand.Float64() * 180) - 90
+  reading.Longitude = (rand.Float64() * 360) - 180
+  reading.BatteryLevel = (rand.Float64() * 100)
+  // reroll BatteryLevel while it's 0
+  for reading.BatteryLevel == 0 {
+    reading.BatteryLevel = (rand.Float64() * 100)
+  }
+
+  return reading.Encode()
 }

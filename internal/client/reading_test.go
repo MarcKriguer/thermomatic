@@ -40,6 +40,15 @@ func TestReadingDecodeExact40(t *testing.T) {
   }
 }
 
+// Test the Decode function, for a randomly-generated Reading.
+func TestReadingDecodeRandom(t *testing.T) {
+  var reading Reading
+  result := reading.Decode(reading.GenerateRandomReading())
+  if !result {
+    t.Errorf("Failed to decode random byte array")
+  }
+}
+
 // Test the Decode function, when more than 40 bytes are passed in.
 func TestReadingDecodeOver40(t *testing.T) {
   var reading Reading

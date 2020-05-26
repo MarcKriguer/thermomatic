@@ -1,14 +1,11 @@
-// Package common implements utilities & functionality commonly consumed by the
-// rest of the packages.
+// Package common implements utilities & constants commonly consumed by the rest of the packages.
 package common
 
-import "errors"
 import "fmt"
 import "os"
 
-// ErrNotImplemented is raised throughout the codebase of the challenge to
-// denote implementations to be done by the candidate.
-var ErrNotImplemented = errors.New("not implemented")
+// Tcp port to use for the server
+var DefaultTheromaticPort = 1337
 
 // Outputs an error message to StdErr
 func LogError(input error) {
